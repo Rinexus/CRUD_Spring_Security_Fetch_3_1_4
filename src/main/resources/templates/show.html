@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en", xmlns:th="http://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>User</title>
 </head>
 <body>
-<p>User name :</p>
-<p th:text="${user.getName()}">VALUE</p>
+<p>Username :</p>
+<p th:text="${user.getUsername()}">VALUE</p>
 <p>User ID :</p>
 <p th:text="${user.getId()}">VALUE</p>
-<p>User E-mail :</p>
-<p th:text = "${user.getEmail()}">VALUE</p>
-
-<a th:href="@{/users/{id}/edit(id=${user.getId()})}"> Edit </a>
-
-<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
-    <input type="submit" value="Delete">
+<p>User Password :</p>
+<p th:text = "${user.getPassword()}">VALUE</p>
+<p>User Roles:</p>
+<ul>
+    <li th:each="role: ${user.getRoles()}" th:text="${role.getName()}"></li>
+</ul>
+<br/>
+<hr/>
+<a href="/logout"> Logout </a>
 </form>
 </body>
 </html>

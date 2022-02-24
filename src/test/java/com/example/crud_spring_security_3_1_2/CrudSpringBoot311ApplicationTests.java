@@ -1,4 +1,4 @@
-package com.example.crud_spring_boot_3_1_1;
+package com.example.crud_spring_security_3_1_2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
