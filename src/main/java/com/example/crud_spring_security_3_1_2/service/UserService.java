@@ -10,7 +10,7 @@ import java.util.Set;
 public interface UserService extends UserDetailsService {
     List<User> getUsers();
     User getUser(Long id);
-    void save(User user);
+    void save(User user, Set<Role> roles);
     void update(User user, Set<Role> roles);
     void delete(Long id);
 }

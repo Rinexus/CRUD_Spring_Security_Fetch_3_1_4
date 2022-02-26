@@ -1,11 +1,9 @@
 package com.example.crud_spring_security_3_1_2.model;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name="roles")
@@ -15,6 +13,7 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column (length = 50, unique = true)
     private String name;
 
     @ManyToMany(mappedBy = "roles")

@@ -19,6 +19,8 @@ public class AdminUserCreationMaster {
                     "VALUES ('admin', '$2a$12$mZFk.U6XZSRzWkMSLhRN4e0um2BUi2KOTZTWsoN4oTYXsFjFq.geG');");
             statement.executeUpdate("INSERT INTO mysql.roles (id, name)\n" +
                     "VALUES (1, 'ROLE_ADMIN');");
+            statement.executeUpdate("INSERT INTO mysql.roles (id, name)\n" +
+                    "VALUES (2, 'ROLE_USER');");
             statement.executeUpdate("INSERT INTO mysql.users_roles (users_id, roles_id)\n" +
                     "VALUES (1, 1);");
             System.out.println("-----------------------------ADMIN USER CREATED-----------------------------");
