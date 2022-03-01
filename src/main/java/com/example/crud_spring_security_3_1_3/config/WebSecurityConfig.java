@@ -1,6 +1,6 @@
-package com.example.crud_spring_security_3_1_2.config;
+package com.example.crud_spring_security_3_1_3.config;
 
-import com.example.crud_spring_security_3_1_2.service.UserService;
+import com.example.crud_spring_security_3_1_3.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

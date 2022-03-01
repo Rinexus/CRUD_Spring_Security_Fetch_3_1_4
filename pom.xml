@@ -12,8 +12,8 @@
     <artifactId>CRUD_Spring_Boot_3_1_1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>CRUD_Spring_Boot_3_1_1</name>
-    <description>CRUD_Spring_Boot_3_1_1</description>
+    <name>CRUD_Spring_Security_3_1_3</name>
+    <description>CRUD_Spring_Security_3_1_3</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -47,11 +47,18 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

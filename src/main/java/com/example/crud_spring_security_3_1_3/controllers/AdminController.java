@@ -1,9 +1,10 @@
-package com.example.crud_spring_security_3_1_2.controllers;
+package com.example.crud_spring_security_3_1_3.controllers;
 
-import com.example.crud_spring_security_3_1_2.model.User;
-import com.example.crud_spring_security_3_1_2.service.RoleService;
-import com.example.crud_spring_security_3_1_2.service.UserService;
+import com.example.crud_spring_security_3_1_3.model.User;
+import com.example.crud_spring_security_3_1_3.service.RoleService;
+import com.example.crud_spring_security_3_1_3.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,12 @@ public class AdminController {
     }
     @GetMapping("")
     public String listUsers(Model model){
+        User currentUser = (User) SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
         model.addAttribute("users", userService.getUsers());
-        return "admin";
+        model.addAttribute("user", new User());
+        model.addAttribute("currentUser", currentUser);
+        return "admin-panel";
     }
 
     @GetMapping("/get/{id}")
@@ -35,7 +40,7 @@ public class AdminController {
 
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user){
-        return "new";
+        return "user-add";
     }
 
     @PostMapping()

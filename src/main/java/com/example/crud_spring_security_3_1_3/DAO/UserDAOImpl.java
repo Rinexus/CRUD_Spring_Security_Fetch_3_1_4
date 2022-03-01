@@ -1,6 +1,6 @@
-package com.example.crud_spring_security_3_1_2.DAO;
+package com.example.crud_spring_security_3_1_3.DAO;
 
-import com.example.crud_spring_security_3_1_2.model.User;
+import com.example.crud_spring_security_3_1_3.model.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

@@ -1,8 +1,8 @@
-package com.example.crud_spring_security_3_1_2.service;
+package com.example.crud_spring_security_3_1_3.service;
 
-import com.example.crud_spring_security_3_1_2.model.Role;
-import com.example.crud_spring_security_3_1_2.model.User;
-import com.example.crud_spring_security_3_1_2.DAO.UserDAO;
+import com.example.crud_spring_security_3_1_3.model.Role;
+import com.example.crud_spring_security_3_1_3.model.User;
+import com.example.crud_spring_security_3_1_3.DAO.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,7 +10,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 

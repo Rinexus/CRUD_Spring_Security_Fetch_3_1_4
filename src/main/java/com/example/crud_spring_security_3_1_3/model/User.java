@@ -1,4 +1,4 @@
-package com.example.crud_spring_security_3_1_2.model;
+package com.example.crud_spring_security_3_1_3.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
