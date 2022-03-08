@@ -1,6 +1,6 @@
-package com.example.crud_spring_security_3_1_3.config;
+package com.example.crud_spring_security_fetch_3_1_4.config;
 
-import com.example.crud_spring_security_3_1_3.service.UserService;
+import com.example.crud_spring_security_fetch_3_1_4.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -26,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .httpBasic().and()// для авторизации в Postman
             .csrf().disable()
             .authorizeRequests()
             .antMatchers("/", "/index").permitAll()

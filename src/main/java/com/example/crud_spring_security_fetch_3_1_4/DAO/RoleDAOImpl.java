@@ -1,6 +1,6 @@
-package com.example.crud_spring_security_3_1_3.DAO;
+package com.example.crud_spring_security_fetch_3_1_4.DAO;
 
-import com.example.crud_spring_security_3_1_3.model.Role;
+import com.example.crud_spring_security_fetch_3_1_4.model.Role;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

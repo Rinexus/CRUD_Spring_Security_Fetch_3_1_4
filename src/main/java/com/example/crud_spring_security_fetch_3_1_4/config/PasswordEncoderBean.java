@@ -1,4 +1,4 @@
-package com.example.crud_spring_security_3_1_3.config;
+package com.example.crud_spring_security_fetch_3_1_4.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

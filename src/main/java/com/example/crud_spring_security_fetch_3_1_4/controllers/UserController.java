@@ -1,7 +1,7 @@
-package com.example.crud_spring_security_3_1_3.controllers;
+package com.example.crud_spring_security_fetch_3_1_4.controllers;
 
-import com.example.crud_spring_security_3_1_3.model.User;
-import com.example.crud_spring_security_3_1_3.service.UserService;
+import com.example.crud_spring_security_fetch_3_1_4.model.User;
+import com.example.crud_spring_security_fetch_3_1_4.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;

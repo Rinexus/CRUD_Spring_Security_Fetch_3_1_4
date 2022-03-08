@@ -1,9 +1,8 @@
-package com.example.crud_spring_security_3_1_3.controllers;
+package com.example.crud_spring_security_fetch_3_1_4.controllers;
 
-import com.example.crud_spring_security_3_1_3.model.User;
-import com.example.crud_spring_security_3_1_3.service.RoleService;
-import com.example.crud_spring_security_3_1_3.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.crud_spring_security_fetch_3_1_4.model.User;
+import com.example.crud_spring_security_fetch_3_1_4.service.RoleService;
+import com.example.crud_spring_security_fetch_3_1_4.service.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,7 @@ public class AdminController {
     private final UserService userService;
     private final RoleService roleService;
 
-    @Autowired
+    //@Autowired
     public AdminController(UserService userService, RoleService roleService) {
         this.userService = userService;
         this.roleService = roleService;
@@ -29,18 +28,18 @@ public class AdminController {
         model.addAttribute("users", userService.getUsers());
         model.addAttribute("user", new User());
         model.addAttribute("currentUser", currentUser);
-        return "admin-panel";
+        return "admin-panel-with-js";
     }
 
     @GetMapping("/get/{id}")
     public String showUserInfo(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
-        return "show";
+        return "redirect:/admin";
     }
 
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user){
-        return "user-add";
+        return "redirect:/admin";
     }
 
     @PostMapping()

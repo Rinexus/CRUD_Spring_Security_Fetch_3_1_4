@@ -1,5 +1,8 @@
-package com.example.crud_spring_security_3_1_3.config;
+package com.example.crud_spring_security_fetch_3_1_4.config;
 
+import com.example.crud_spring_security_fetch_3_1_4.service.RoleService;
+import com.example.crud_spring_security_fetch_3_1_4.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
@@ -10,10 +13,30 @@ import java.sql.Statement;
 
 @Configuration
 public class AdminUserCreationMaster {
+    private final UserService userService;
+
+    private final RoleService roleService;
+
+    @Autowired
+    public AdminUserCreationMaster(UserService userService, RoleService roleService) {
+        this.userService = userService;
+        this.roleService = roleService;
+    }
 
     @PostConstruct
     public void createUsers(){
         System.out.println("-----------------------------CREATING ADMIN USER----------------------------");
+//        User admin = new User();
+//        Role adminRole = new Role();
+//        admin.setId(1L);
+//        admin.setUsername("admin");
+//        admin.setPassword("1234");
+//        adminRole.setId(1L);
+//        adminRole.setName("ROLE_ADMIN");
+//        admin.setRoles(Collections.singleton(adminRole));
+//        adminRole.setUsers(Collections.singleton(admin));
+//        userService.save(admin,Collections.singleton(adminRole));
+
         try (Statement statement = connect().createStatement()) {
             statement.executeUpdate("INSERT INTO mysql.users (username, password)\n" +
                     "VALUES ('admin', '$2a$12$mZFk.U6XZSRzWkMSLhRN4e0um2BUi2KOTZTWsoN4oTYXsFjFq.geG');");
